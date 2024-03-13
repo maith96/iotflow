@@ -4,8 +4,8 @@ import subprocess
 from flask import Flask, flash, request, redirect, render_template, url_for, send_file
 from werkzeug.utils import secure_filename
 
-UPLOAD_VSA_FOLDER = './VSA/docker/apps_to_analyze'
-UPLOAD_FLA_FOLDER = './FlowAnalysis/docker/apps_to_analyze'
+UPLOAD_VSA_FOLDER = '../iotflow_files/VSA/docker/apps_to_analyze'
+UPLOAD_FLA_FOLDER = '../iotflow_files/FlowAnalysis/docker/apps_to_analyze'
 ALLOWED_EXTENSIONS = {'apk'}
 
 app = Flask(__name__)
