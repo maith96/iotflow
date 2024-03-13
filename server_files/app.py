@@ -47,7 +47,7 @@ def upload_file():
                 if (analysis_type == 'fla'):
                     subprocess.run([shutil.which('fla_run.bat')], check=True)
                 else:
-                    subprocess.run(['./VSA/docker/vsa_run.bat' ], check=True)
+                    subprocess.run(['./workspaces/iotflow/iotflow_files/VSA/docker/vsa_run.sh' ], check=True)
             except subprocess.CalledProcessError as e:
                 return  f"Error executing Docker command: {e}"
             return redirect(url_for('index', name=filename))
