@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="theme-color" content="#317EFB"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="manifest" href="/manifest.json">
+        <script>
+          if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+              navigator.serviceWorker.register("/sw.js").then(function(registration) {
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+              }, function(err) {
+                console.log('ServiceWorker registration failed: ', err);
+              });
+            });
+          }
+        </script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+      </head>
+<body>
+    
+    <div class="w-full h-[100vh] bg-gray-100 flex flex-col justify-between">
+      <div>
+        <h1 class="font-bold text-xl text-white p-10 bg-blue-600">Iotflow</h1>
+        {% block content %} {% endblock %}
+      </div>
+      
+      <p class="text-center text-gray-500 text-xs">
+        &copy;2023 Iotflow. All rights reserved.
+      </p>
+    </div>
+</body>
+</html>
